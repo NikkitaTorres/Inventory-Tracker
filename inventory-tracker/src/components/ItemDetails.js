@@ -1,9 +1,16 @@
-import React from "react";
+import React from 'react';
 
-function ItemDetails() {
+const ItemDetails = ({ item }) => {
+  const { name, origin, price, roast } = item;
+
   return (
-    <React.Fragment></React.Fragment>
-  )
-}
+    <div>
+      <h2>{name}</h2>
+      <p>Origin: {origin}</p>
+      <p>Price: ${price}</p>
+      <p>Roast: {roast}</p>
+    </div>
+  );
+};
 
 export default ItemDetails;
