@@ -2,9 +2,9 @@
 
 #### Authored-by: Nikkita Torres <nikkitatorres@yahoo.com>
 
-# Component tree/diagram
+# Component tree
 
-You can find an accurate representation of the application's component tree [here]().
+You can find an accurate representation of the application's component tree [here](https://app.diagrams.net/#HNikkitaTorres%2FInventory-Tracker%2Fmain%2FUntitled%20Diagram.drawio).
 
 ## Technologies Used
 
