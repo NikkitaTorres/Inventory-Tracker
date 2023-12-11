@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ItemList from './ItemList';
-import ItemDetails from './ItemDetails';
-import NewItemForm from './NewItemForm';
+import ItemList from './ItemList.js';
+import ItemDetails from './ItemDetails.js';
+import NewItemForm from './NewItemForm.js';
 
 class ItemControl extends Component {
   constructor(props) {

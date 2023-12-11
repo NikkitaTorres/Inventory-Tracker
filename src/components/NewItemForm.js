@@ -10,7 +10,6 @@ const NewItemForm = ({ onAddItem }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validate input here if needed
     onAddItem({ ...newItem, weight: 130, id: Date.now() });
     setNewItem({ name: '', origin: '', price: 0, roast: '' });
   };
