@@ -1,17 +1,27 @@
+// Item.js
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const Item = ({ name, initialWeight, origin, price, roast }) => {
+const Item = ({ name, initialWeight, origin, price, roast, onSale }) => {
+  const [weight, setWeight] = useState(initialWeight);
   const [showDetails, setShowDetails] = useState(false);
 
   const toggleDetails = () => {
     setShowDetails(!showDetails);
   };
 
+  const handleSale = () => {
+    if (weight > 0) {
+      setWeight(weight - 1);
+      onSale(); // Notify the parent component about the sale
+    }
+  };
+
   return (
     <div>
-      <p>{`${name} - ${initialWeight} lbs`}</p>
+      <p>{`${name} - ${weight} lbs`}</p>
       <button onClick={toggleDetails}>View Details</button>
+      <button onClick={handleSale}>Sale</button>
 
       {showDetails && (
         <div>
@@ -30,6 +40,7 @@ Item.propTypes = {
   origin: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   roast: PropTypes.string.isRequired,
+  onSale: PropTypes.func.isRequired,
 };
 
 export default Item;

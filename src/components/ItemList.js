@@ -1,7 +1,8 @@
+// ItemList.js
 import React from 'react';
 import Item from './Item';
 
-const ItemList = ({ items }) => {
+const ItemList = ({ items, onItemClick, onSale }) => {
   return (
     <div>
       <h2>Inventory</h2>
@@ -11,8 +12,10 @@ const ItemList = ({ items }) => {
           name={item.name}
           initialWeight={item.weight}
           origin={item.origin}
-          price={item.price}
+          price={Number (item.price)}
           roast={item.roast}
+          onSale={onSale}  // Ensure that onSale is passed down
+          onItemClick={() => onItemClick(item)}
         />
       ))}
     </div>

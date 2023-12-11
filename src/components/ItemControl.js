@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ItemList from './ItemList.js';
-import ItemDetails from './ItemDetails.js';
-import NewItemForm from './NewItemForm.js';
+import ItemList from './ItemList';
+import ItemDetails from './ItemDetails';
+import NewItemForm from './NewItemForm';
 
 class ItemControl extends Component {
   constructor(props) {
@@ -23,13 +23,17 @@ class ItemControl extends Component {
     this.setState((prevState) => ({ items: [...prevState.items, newItem] }));
   };
 
+  handleSale = () => {
+    console.log('Item sold!');
+  };
+
   render() {
     const { items, selectedItem } = this.state;
 
     return (
       <div>
         <h1>Coffee Bean Inventory</h1>
-        <ItemList items={items} onItemClick={this.handleItemClick} />
+        <ItemList items={items} onItemClick={this.handleItemClick} onSale={this.handleSale} />
         {selectedItem ? <ItemDetails item={selectedItem} /> : null}
         <NewItemForm onAddItem={this.handleAddItem} />
       </div>
