@@ -1,4 +1,3 @@
-// Item.js
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
@@ -13,7 +12,7 @@ const Item = ({ name, initialWeight, origin, price, roast, onSale }) => {
   const handleSale = () => {
     if (weight > 0) {
       setWeight(weight - 1);
-      onSale(); // Notify the parent component about the sale
+      onSale();
     }
   };
 

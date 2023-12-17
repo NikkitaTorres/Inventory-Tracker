@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ItemDetails = ({ item }) => {
   const { name, origin, price, roast } = item;
@@ -11,6 +12,15 @@ const ItemDetails = ({ item }) => {
       <p>Roast: {roast}</p>
     </div>
   );
+};
+
+ItemDetails.propTypes = {
+  item: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    origin: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    roast: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ItemDetails;
