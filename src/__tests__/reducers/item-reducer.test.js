@@ -16,4 +16,20 @@ describe('itemReducer', () => {
    expect(newState.items).toHaveLength(1);
    expect(newState.items[0]).toEqual(newItem);
   });
+
+  it('should handle ITEM_CLICKED action', () => {
+    const initialState = {
+      items: [
+        { id: 1, name: 'Coffee Bean 1', weight: 130, clicked: false },
+      ],
+    };
+
+    const action = {
+      type: 'ITEM_CLICKED',
+      payload: { id: 1 },
+    };
+    const newState = itemReducer(initialState, action);
+
+    expect(newState.items[0].clicked).toBe(true);
+  });
 });

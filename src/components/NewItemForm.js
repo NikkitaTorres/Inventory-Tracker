@@ -10,7 +10,7 @@ const NewItemForm = ({ onAddItem }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItem({ ...newItem, weight: 130, id: Date.now() });
+    onAddItem({ ...newItem, weight: 130, price: Number(newItem.price), id: Date.now() });
     setNewItem({ name: '', origin: '', price: 0, roast: '' });
   };
 

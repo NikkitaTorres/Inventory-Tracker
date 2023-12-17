@@ -11,6 +11,7 @@ export const onItemClick = (item) => ({
   payload: item,
 });
 
-export const onSale = () => ({
+export const onSale = (item) => ({
   type: 'ITEM_SOLD',
+  payload: item,
 });

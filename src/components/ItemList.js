@@ -1,10 +1,21 @@
 import React from 'react';
 import Item from './Item';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
+import { onItemClick, onSale } from '../actions/index';
 
-const ItemList = ({ items, onItemClick, onSale }) => {
+const ItemList = ({ items }) => {
+  const dispatch = useDispatch();
   console.log('ItemList - Items:', items);
+
+  const handleItemClick = (item) => {
+    dispatch(onItemClick(item));
+  };
+
+  const handleSale = (item) => {
+    dispatch(onSale(item));
+  };
+
   return (
     <div>
       <h2>Inventory</h2>
@@ -16,8 +27,8 @@ const ItemList = ({ items, onItemClick, onSale }) => {
           origin={item.origin}
           price={Number (item.price)}
           roast={item.roast}
-          onSale={onSale} 
-          onItemClick={() => onItemClick(item)}
+          onSale={handleSale} 
+          onItemClick={() => handleItemClick(item)}
         />
       ))}
     </div>
@@ -40,7 +51,7 @@ ItemList.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  items: state.items.items, // Update this to match your state structure
+  items: state.items.items,
 });
 
-export default connect(mapStateToProps, { onItemClick, onSale })(ItemList);
+export default connect(mapStateToProps)(ItemList);
