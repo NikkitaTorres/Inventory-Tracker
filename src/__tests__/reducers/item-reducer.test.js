@@ -28,8 +28,26 @@ describe('itemReducer', () => {
       type: 'ITEM_CLICKED',
       payload: { id: 1 },
     };
+
     const newState = itemReducer(initialState, action);
 
     expect(newState.items[0].clicked).toBe(true);
+  });
+
+  test('should handle ITEM_SOLD action', () => {
+    const initialState = {
+      items: [
+        {id: 1, name: 'Coffee Bean 1', weight: 130},
+      ],
+    };
+    
+    const action = {
+      type: 'ITEM_SOLD',  
+      payload: { id: 1 },
+    };
+
+    const newState = itemReducer(initialState, aciton);
+
+    expect(newState.items[0].weight).toBe(129);
   });
 });
