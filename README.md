@@ -30,6 +30,10 @@ In the project directory, you can run:
 
 Installs Node Package Manager. This is necessary for any other 'npm' commands.
 
+### `npm install redux@4.2.0 react-redux@8.0.2`
+
+This will install and add Redux and React Redux bindings to the project. This will be necessary for this branch of the project to work.
+
 ### `npm start`
 
 Runs the app in the development mode.\
