@@ -5,3 +5,12 @@ export const addItem = (item) => {
     payload: item,
   };
 };
+
+export const onItemClick = (item) => ({
+  type: 'ITEM_CLICKED',
+  payload: item,
+});
+
+export const onSale = () => ({
+  type: 'ITEM_SOLD',
+});

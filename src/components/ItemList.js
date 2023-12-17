@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from './Item';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const ItemList = ({ items, onItemClick, onSale }) => {
   console.log('ItemList - Items:', items);
@@ -38,4 +39,8 @@ ItemList.propTypes = {
   onSale: PropTypes.func.isRequired,
 };
 
-export default ItemList;
+const mapStateToProps = (state) => ({
+  items: state.items.items, // Update this to match your state structure
+});
+
+export default connect(mapStateToProps, { onItemClick, onSale })(ItemList);
