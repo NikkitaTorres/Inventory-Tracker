@@ -1,4 +1,4 @@
-import itemReducer from '../../reducers/itemReducer';
+import itemReducer from '../../reducers/item-reducer';
 
 describe('itemReducer', () => {
   test('should handle ADD_ITEM action', () => {
