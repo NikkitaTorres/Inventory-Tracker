@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ItemList from './ItemList';
 import ItemDetails from './ItemDetails';
 import NewItemForm from './NewItemForm';
+import { connect } from 'react-redux';
+import { addItem } from '../actions/index';
 
 class ItemControl extends Component {
   constructor(props) {
@@ -20,7 +22,8 @@ class ItemControl extends Component {
   };
 
   handleAddItem = (newItem) => {
-    this.setState((prevState) => ({ items: [...prevState.items, newItem] }));
+    console.log('ItemControl - Adding Item:', newItem);
+    this.props.addItem(newItem);
   };
 
   handleSale = () => {
@@ -41,4 +44,8 @@ class ItemControl extends Component {
   }
 }
 
-export default ItemControl;
+const mapDispatchToProps = {
+  addItem,
+};
+
+export default connect(null, mapDispatchToProps)(ItemControl);

@@ -3,6 +3,7 @@ import Item from './Item';
 import PropTypes from 'prop-types';
 
 const ItemList = ({ items, onItemClick, onSale }) => {
+  console.log('ItemList - Items:', items);
   return (
     <div>
       <h2>Inventory</h2>
