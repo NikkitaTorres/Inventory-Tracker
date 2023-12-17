@@ -9,7 +9,10 @@ const itemReducer = (state = initialState, action) => {
       };
     case 'ITEM_CLICKED':
       return {
-
+        ...state,
+        items: state.items.map((item) =>
+        item.id === action.payload.id ? { ...item, clicked: true } : item
+        ),
       };
       default:
         return state;
