@@ -7,13 +7,26 @@ const itemReducer = (state = initialState, action) => {
         ...state,
         items: [...state.items, action.payload],
       };
-    case 'ITEM_CLICKED':
-      return {
-        ...state,
-        items: state.items.map((item) =>
-        item.id === action.payload.id ? { ...item, clicked: true } : item
-        ),
-      };
+      case 'ITEM_CLICKED':
+        return {
+          ...state,
+          items: state.items.map((item) =>
+            item.id === action.payload.id ? { ...item, clicked: true } : item
+          ),
+        };
+        case 'ITEM_SOLD':
+          const soldItemId = action.payload?.id;
+          if (soldItemId === undefined) {
+            return state;
+          }
+          return {
+            ...state,
+            items: state.items.map((item) =>
+              item.id === action.payload.id
+                ? { ...item, weight: item.weight - 1 }
+                : item
+            ),
+          };
       default:
         return state;
   }

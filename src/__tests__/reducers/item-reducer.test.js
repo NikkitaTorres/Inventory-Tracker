@@ -40,13 +40,13 @@ describe('itemReducer', () => {
         {id: 1, name: 'Coffee Bean 1', weight: 130},
       ],
     };
-    
+
     const action = {
       type: 'ITEM_SOLD',  
       payload: { id: 1 },
     };
 
-    const newState = itemReducer(initialState, aciton);
+    const newState = itemReducer(initialState, action);
 
     expect(newState.items[0].weight).toBe(129);
   });
