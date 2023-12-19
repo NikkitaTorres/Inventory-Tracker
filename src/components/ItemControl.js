@@ -6,16 +6,6 @@ import { connect } from 'react-redux';
 import { onItemClick, onSale, addItem } from '../actions/index';
 
 class ItemControl extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      items: [
-        { id: 1, name: 'Coffee Bean 1', weight: 130, origin: 'Origin 1', price: 10, roast: 'Light' },
-      ],
-      selectedItem: null,
-    };
-  }
 
   handleItemClick = (item) => {
     this.props.onItemClick(item);

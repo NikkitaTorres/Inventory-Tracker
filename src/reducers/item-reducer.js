@@ -1,4 +1,9 @@
-const initialState = { items: [] };
+const initialState = { 
+  items: [
+    { id: 1, name: 'Coffee Bean 1', weight: 130, origin: 'Origin 1', price: 10, roast: 'Light' },
+  ],
+  selectedItem: null,
+};
 
 const itemReducer = (state = initialState, action) => {
   switch (action.type) {

@@ -1,7 +1,7 @@
-export const addItem = (item) => {
+export const addItem = (newItem) => {
   return {
     type: 'ADD_ITEM',
-    payload: item,
+    payload: newItem
   };
 };
 
