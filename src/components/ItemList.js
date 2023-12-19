@@ -6,7 +6,6 @@ import { onItemClick, onSale } from '../actions/index';
 
 const ItemList = ({ items }) => {
   const dispatch = useDispatch();
-  console.log('ItemList - Items:', items);
 
   const handleItemClick = (item) => {
     dispatch(onItemClick(item));

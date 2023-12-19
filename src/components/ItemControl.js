@@ -3,7 +3,7 @@ import ItemList from './ItemList';
 import ItemDetails from './ItemDetails';
 import NewItemForm from './NewItemForm';
 import { connect } from 'react-redux';
-import { addItem } from '../actions/index';
+import { onItemClick, onSale, addItem } from '../actions/index';
 
 class ItemControl extends Component {
   constructor(props) {
@@ -18,20 +18,19 @@ class ItemControl extends Component {
   }
 
   handleItemClick = (item) => {
-    this.setState({ selectedItem: item });
+    this.props.onItemClick(item);
   };
 
   handleAddItem = (newItem) => {
-    console.log('ItemControl - Adding Item:', newItem);
     this.props.addItem(newItem);
   };
 
   handleSale = () => {
-    console.log('Item sold!');
+    this.props.onSale();
   };
 
   render() {
-    const { items, selectedItem } = this.state;
+    const { items, selectedItem } = this.props;
 
     return (
       <div>
@@ -44,8 +43,9 @@ class ItemControl extends Component {
   }
 }
 
-const mapDispatchToProps = {
-  addItem,
-};
+const mapStateToProps = (state) => ({
+  items: state.items.items,
+  selectedItem: state.items.selectedItem,
+});
 
-export default connect(null, mapDispatchToProps)(ItemControl);
+export default connect(mapStateToProps, { onItemClick, onSale, addItem })(ItemControl);
