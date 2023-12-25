@@ -13,10 +13,19 @@ You can find an accurate representation of the application's component tree [her
 * JavaScript
 * JSX
 * React.js
+* Node.js
 
 ## Description
 
 This a project designed to track inventory items. Use is able to see a list of existing items and their remaining amount, create new items, and see the item's details by clicking on it.
+
+## Setup/Installation Requirements
+
+1. Clone [this](https://github.com/NikkitaTorres/Inventory-Tracker.git) repository to your desktop.
+2. From the root of the project folder, run "NPM install" in the console to dowload all dependencies (Jest, React, Redux).
+3. Build the project with webpack by using the "num run build" command in the console.
+4. Start a development server with the "npm run start" command in the console.
+5. You can run tests with Jest using "npm run test".
 
 # Getting Started with Create React App
 
@@ -25,14 +34,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
-
-### `npm install`
-
-Installs Node Package Manager. This is necessary for any other 'npm' commands.
-
-### `npm install redux@4.2.0 react-redux@8.0.2`
-
-This will install and add Redux and React Redux bindings to the project. This will be necessary for this branch of the project to work.
 
 ### `npm start`
 
